@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111026">
+  <meta name="description" content="Fly a firebird through floating crystal gates in this one-button browser arcade game.">
+  <title>Duskwing — Browser Arcade</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./game.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div>
+        <p class="eyebrow"><span></span> BROWSER ARCADE</p>
+        <h1>Duskwing</h1>
+        <p class="subtitle">Fly a firebird through floating crystal gates.</p>
+      </div>
+      <div class="scores" aria-label="Scoreboard">
+        <div class="counter"><span>SCORE</span><strong id="score">0</strong></div>
+        <div class="counter best"><span>BEST</span><strong id="best">0</strong></div>
+      </div>
+    </header>
+
+    <section class="arcade" aria-label="Duskwing game">
+      <div class="stage">
+        <canvas id="game" tabindex="-1" aria-label="Twilight sky with a firebird and crystal gates" aria-describedby="instructions"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="panel">
+            <p class="panel-label" id="status-label" hidden></p>
+            <h2 id="game-heading">Ready to fly?</h2>
+            <p id="game-message">Flap to stay aloft. Each gate earns one point.</p>
+            <button class="primary" id="action" type="button">Start flight <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <p id="instructions"><kbd>SPACE</kbd> <kbd>↑</kbd> <span>or tap the sky to flap</span></p>
+        <div class="options">
+          <button type="button" id="pause" disabled>Pause</button>
+          <button type="button" id="sound" aria-pressed="false">Sound off</button>
+        </div>
+      </div>
+    </section>
+    <p id="announcement" class="sr-only" aria-live="polite"></p>
+  </main>
+</body>
+</html>
